@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0b0c0a;
+  --color-surface: #141513;
+  --color-surface-2: #1c1d1b;
+  --color-surface-3: #272825;
+  --color-line: #2c2d2a;
+  --color-muted: #8d8f88;
+  --color-accent: #c8f53c;
+  --color-accent-ink: #11160a;
+  --color-done: #1b2310;
+  --color-pr: #ffb020;
+  --color-danger: #ff4d5e;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Inter, system-ui, sans-serif;
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: #f2f3ef;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+input,
+textarea,
+select {
+  font-size: 16px; /* verhindert Auto-Zoom auf iOS */
+  -webkit-user-select: text;
+  user-select: text;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+button {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+.pt-safe {
+  padding-top: env(safe-area-inset-top);
+}
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
